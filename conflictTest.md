@@ -1,1 +1,2 @@
 this is conflictTest
+*modified*
