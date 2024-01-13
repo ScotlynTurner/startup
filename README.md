@@ -1,5 +1,5 @@
 # Space Adventure
-## Description deliverable
+## Specification Deliverable
 ### Elevator Pitch
 With so many mind-numbing apps today that only allow you to meet one boring objective, it's important to keep your mind creatively engaged. That's why Space Adventure allows users to explore a virtual world through choosing different paths to take. Each decision leads to another, and when your path reaches an ending you are rewarded with an acheivement which you can share with friends. Then, you can begin again and choose a different course, gaining a new achievement each time you finish a path.
 
@@ -36,7 +36,17 @@ With so many mind-numbing apps today that only allow you to meet one boring obje
 - Notifications of friend's endings displayed in real time
 - Choice to play again once an ending is reached
 
-
+### Technologies
+- **HTML** - Uses correct HTML structure for application. Two HTML pages. One for login, one for the home page, one for the story and options, one for the end result, one to diplay friends' achievements, and one to display personal achievements.
+- **CSS** - Application styling that looks good on different screen sizes, uses good whitespace, color choice and contrast.
+- **JavaScript** - Provides login, option display, applying decisions, and moving to different pages.
+- **Service** - Backend service with endpoints for:
+  - login
+  - retrieving achievements
+  - sending and saving achievements
+- **DB/Login** - Store users and achievements in database. Register and login users. Credentials securely stored in database.
+- **WebSocket** - As each user ends, their achievement is broadcast to all other users.
+- **React** - Application ported to use the React web framework.
 
 
 
