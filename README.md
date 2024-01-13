@@ -5,22 +5,39 @@ With so many mind-numbing apps today that only allow you to meet one boring obje
 
 ### Design
 **Login**
-<img width="1101" alt="Screen Shot 2024-01-12 at 8 14 13 PM" src="https://github.com/ScotlynTurner/startup/assets/144388353/912e9c6b-6cba-4f4d-8a3c-2700aaa35b2b">
+
+<img width="500" alt="Screen Shot 2024-01-12 at 8 14 13 PM" src="https://github.com/ScotlynTurner/startup/assets/144388353/912e9c6b-6cba-4f4d-8a3c-2700aaa35b2b">
 
 **Home Page**
-<img width="1096" alt="Screen Shot 2024-01-12 at 8 14 38 PM" src="https://github.com/ScotlynTurner/startup/assets/144388353/ca0849f0-d8d7-4044-808b-e02a59b6457f">
+
+<img width="500" alt="Screen Shot 2024-01-12 at 8 14 38 PM" src="https://github.com/ScotlynTurner/startup/assets/144388353/ca0849f0-d8d7-4044-808b-e02a59b6457f">
 
 **Options**
-<img width="1092" alt="Screen Shot 2024-01-12 at 8 15 03 PM" src="https://github.com/ScotlynTurner/startup/assets/144388353/8048ec3c-81b0-4147-9fe8-17565c20492c">
+
+<img width="500" alt="Screen Shot 2024-01-12 at 8 15 03 PM" src="https://github.com/ScotlynTurner/startup/assets/144388353/8048ec3c-81b0-4147-9fe8-17565c20492c">
 
 **Ending**
-<img width="1091" alt="Screen Shot 2024-01-12 at 8 15 18 PM" src="https://github.com/ScotlynTurner/startup/assets/144388353/a17ba6c6-f2e7-40aa-b4b5-5c32906f5c91">
+
+<img width="500" alt="Screen Shot 2024-01-12 at 8 15 18 PM" src="https://github.com/ScotlynTurner/startup/assets/144388353/a17ba6c6-f2e7-40aa-b4b5-5c32906f5c91">
 
 **Friends Page**
-<img width="1090" alt="Screen Shot 2024-01-12 at 8 15 36 PM" src="https://github.com/ScotlynTurner/startup/assets/144388353/3382569e-f5c3-4b7d-ab2e-bc9948983b37">
+
+<img width="500" alt="Screen Shot 2024-01-12 at 8 15 36 PM" src="https://github.com/ScotlynTurner/startup/assets/144388353/3382569e-f5c3-4b7d-ab2e-bc9948983b37">
 
 **Achievements Page**
-<img width="1090" alt="Screen Shot 2024-01-12 at 8 15 48 PM" src="https://github.com/ScotlynTurner/startup/assets/144388353/67a12601-84cf-49c5-8c80-83e8deff703d">
+
+<img width="500" alt="Screen Shot 2024-01-12 at 8 15 48 PM" src="https://github.com/ScotlynTurner/startup/assets/144388353/67a12601-84cf-49c5-8c80-83e8deff703d">
+
+### Key Features
+- Secure login over HTTPS
+- Ability to select path options
+- Background images that are related to the option selected
+- New endings discovered are stored in both personal achievements and friends page
+- Notifications of friend's endings displayed in real time
+- Choice to play again once an ending is reached
+
+
+
 
 
 notes.md = https://github.com/ScotlynTurner/startup/blob/main/notes.md
