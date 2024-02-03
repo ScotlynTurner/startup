@@ -37,7 +37,7 @@ With so many mind-numbing apps today that only allow you to meet one boring obje
 - Choice to play again once an ending is reached
 
 ### Technologies
-- **HTML** - Uses correct HTML structure for application. Two HTML pages. One for login, one for the home page, one for the story and options, one for the end result, one to diplay friends' achievements, and one to display personal achievements.
+- **HTML** - Uses correct HTML structure for application. Four HTML pages. One for login, one for the home page, two for the story and options, one for the end result, one to diplay friends' achievements, and one to display personal achievements.
 - **CSS** - Application styling that looks good on different screen sizes, uses good whitespace, color choice and contrast.
 - **JavaScript** - Provides login, option display, applying decisions, and moving to different pages.
 - **Service** - Backend service with endpoints for:
