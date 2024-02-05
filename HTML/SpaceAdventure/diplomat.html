@@ -24,18 +24,22 @@
     </header>
 
     <main>
-        <p>You choose to be a diplomat, determined to forge alliances with any potential alien civilizations within 
-            the Stellar Nexus. As the Star Voyager enters the Nexus, you encounter a peaceful and highly advanced race
-            known as the Luminara. They invite you to their radiant homeworld, where discussions unfold about shared 
-            knowledge and mutual cooperation. However, a rival faction within the Luminara challenges your presence, 
-            and you must decide:
+        <p>
+          You choose to be a diplomat, determined to forge alliances with any potential alien civilizations within 
+          the Stellar Nexus. As the Star Voyager enters the Nexus, you encounter a peaceful and highly advanced race
+          known as the Luminara. They invite you to their radiant homeworld, where discussions unfold about shared 
+          knowledge and mutual cooperation. However, a rival faction within the Luminara challenges your presence, 
+          and you must decide:
         </p>
-        <input type="radio" id="diplomat" name="varRadio" value="diplomat" checked />
-        <label for="diplomat"><b>Negotiate:</b> Attempt to mediate and strengthen ties with the rival faction, seeking unity among the Luminara.</label>
+        <div id="spaceImage" class="picture-box"><img width="400px" src="spce.jpeg" alt="random" /></div>
+        <input type="radio" id="negotiate" name="varRadio" value="negotiate" checked />
+        <label for="negotiate" onclick="window.location.href = 'ending.html';"><b>Negotiate:</b> Attempt to mediate and strengthen 
+          ties with the rival faction, seeking unity among the Luminara.</label>
         <br>
 
-        <input type="radio" id="explorer" name="varRadio" value="explorer" checked />
-        <label for="explorer"><b>Depart:</b> Choose to leave the Luminara, avoiding potential conflict and focusing on other aspects of the Stellar Nexus.</label>
+        <input type="radio" id="depart" name="varRadio" value="depart" checked />
+        <label for="depart" onclick="window.location.href = 'ending.html';"><b>Depart:</b> Choose to leave the Luminara, avoiding 
+          potential conflict and focusing on other aspects of the Stellar Nexus.</label>
         <br>
         
         <button type="select">Select</button>

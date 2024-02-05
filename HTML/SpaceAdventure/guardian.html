@@ -24,19 +24,21 @@
     </header>
 
     <main>
-        <p>Choosing the path of a guardian, you take on the responsibility of safeguarding the secrets within our 
-            solar system as you navigate the Stellar Nexus. Soon, your vigilance pays off as you intercept a signal 
-            indicating potential threats from an unidentified alien faction known as the Shadow Brood. Now faced with a 
-            crucial decision, you must choose:
+        <p>
+          Choosing the path of a guardian, you take on the responsibility of safeguarding the secrets within our 
+          solar system as you navigate the Stellar Nexus. Soon, your vigilance pays off as you intercept a signal 
+          indicating potential threats from an unidentified alien faction known as the Shadow Brood. Now faced with a 
+          crucial decision, you must choose:
         </p>
-        <input type="radio" id="diplomat" name="varRadio" value="diplomat" required="required" />
-        <label for="diplomat"><b>Confront:</b>  Engage in direct confrontation with the Shadow Brood, aiming to neutralize 
-            the potential threat and protect the solar system's secrets.</label>
+        <div id="spaceImage" class="picture-box"><img width="400px" src="spce.jpeg" alt="random" /></div>
+        <input type="radio" id="confront" name="varRadio" value="confront"/>
+        <label for="confront"  onclick="window.location.href = 'ending.html';"><b>Confront:</b>  Engage in direct confrontation with the 
+          Shadow Brood, aiming to neutralize the potential threat and protect the solar system's secrets.</label>
         <br>
 
-        <input type="radio" id="explorer" name="varRadio" value="explorer" required="required" />
-        <label for="explorer"><b>Evade:</b> Opt for a strategic retreat, avoiding immediate conflict and allowing for 
-            further assessment of the Shadow Brood's intentions.</label>
+        <input type="radio" id="evade" name="varRadio" value="evade"/>
+        <label for="evade"  onclick="window.location.href = 'ending.html';"><b>Evade:</b> Opt for a strategic retreat, avoiding immediate 
+          conflict and allowing for further assessment of the Shadow Brood's intentions.</label>
         <br>
         
         <button type="select">Select</button>

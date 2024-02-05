@@ -37,7 +37,7 @@ With so many mind-numbing apps today that only allow you to meet one boring obje
 - Choice to play again once an ending is reached
 
 ### Technologies
-- **HTML** - Uses correct HTML structure for application. Four HTML pages. One for login, one for the home page, two for the story and options, one for the end result, one to diplay friends' achievements, and one to display personal achievements.
+- **HTML** - Uses correct HTML structure for application. Nine HTML pages. One for login, one for the home page, four for the story and options, one for the end result, one to diplay friends' achievements, and one to display personal achievements.
 - **CSS** - Application styling that looks good on different screen sizes, uses good whitespace, color choice and contrast.
 - **JavaScript** - Provides login, option display, applying decisions, and moving to different pages.
 - **Service** - Backend service with endpoints for:
@@ -47,6 +47,15 @@ With so many mind-numbing apps today that only allow you to meet one boring obje
 - **DB/Login** - Store users and achievements in database. Register and login users. Credentials securely stored in database.
 - **WebSocket** - As each user ends, their achievement is broadcast to all other users.
 - **React** - Application ported to use the React web framework.
+
+## HTML Deliverable
+For this deliverable I built out the structure of my application using HTML.
+- **HTML pages** - Nine HTML page that represent the ability to login, play, see achievements, and see friends' activity.
+- **Links** - The login page automatically links to the home page. The home page links to the beginning of the game, which has links according to which story option is chosen. The last parts of the story have links to the game ending, and the ending links back to the home, achievements, and friends pages.
+- **Text** - Each part of the story and options is represented by a textual description.
+- **Images** - Image placeholders on story, ending, friends, and achievement pages.
+- **DB/Login** - Input boxes and submit button for login. The friends and achievements tables represent data pulled from the database.
+- **WebSocket** - The date of ending achievements represent the notification of realtime games.
 
 
 
