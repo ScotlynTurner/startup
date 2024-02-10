@@ -21,11 +21,20 @@ body {
     justify-content: normal;
     font-family: "VT323";
     font-size: larger;
-    background-color: #f0ebeb;
-    padding: 1em;
-    border-radius: 5px;
-    
+    padding: 2em;
   }
+  form {
+    padding: 0.3em;
+  }
+
+  section {
+    color:black;
+    background-color: #ffffff;
+    padding: 5em;
+    border-radius: 2px;
+  }
+
+  
   
   footer {
     flex: 0 30px;
