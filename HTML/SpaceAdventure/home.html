@@ -4,32 +4,42 @@
     <meta charset="UTF-8" />
     <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simon</title>
+    <title>SpaceAdventure</title>
     <link rel="icon" href="planet.ico" />
+    <link rel="stylesheet" href="play.css" />
+
+    <!-- Include bootstrap CSS framework -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=VT323&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body class="bg-dark text-light">
     <!-- Use header, main, and footer elements to give semantic structure -->
-    <header>
+    <header class="container-fluid">
       <h2>Space Adventure</h2>
 
       <!-- Navigation elements -->
-      <nav>
+      <nav class="navbar fixed-top navbar-dark">
         <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
-          <nav>
-            <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
-            <menu>
-              <li><a href="home.html">Home</a></li>
-              <li><a href="achievements.html">Achievements</a></li>
-              <li><a href="friends.html">Friends</a></li>
-              <li><a href="index.html">Login</a></li>
-            </menu>
-          </nav>
+        <menu class="navbar-nav">
+          <li class="nav-item"><a href="home.html">Home</a></li>
+          <li class="nav-item"><a href="achievements.html">Achievements</a></li>
+          <li class="nav-item"><a href="friends.html">Friends</a></li>
+          <li class="nav-item"><a href="index.html">Login</a></li>
+        </menu>
+      </nav>
 
       <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
       <hr />
     </header>
 
-    <main>
+    <main class="container-fluid bg-black text-center">
       <h1>Space Adventure</h1>
       <div class="start">
         In a future where humanity has expanded its reach into our solar system, you find yourself aboard the sleek spacecraft "Star Voyager." Tasked with a pivotal mission, you stand on the brink of unraveling the mysteries of the Stellar Nexus, a perplexing anomaly hidden within the cosmic dance of our planets.
@@ -50,11 +60,12 @@
 
       <br />
       <footer>
-        <hr />
-        <span class="text-reset">Author Name(s)</span>
-        <br />
-        <a href="https://github.com/ScotlynTurner/startup.git">GitHub</a>
-      </footer>
+        <footer class="bg-dark text-white-50">
+          <div class="container-fluid">
+            <span class="text-reset">Author Name(s)</span>
+            <a class="text-reset" href="https://github.com/ScotlynTurner/startup.git">Source</a>
+          </div>
+        </footer>
     </main>
   </body>
 </html>
