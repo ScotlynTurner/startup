@@ -19,6 +19,11 @@ menu {
   justify-content: center;
 }
 
+section {
+  margin-left: 5em;
+  margin-right: 5em;
+  font-size: x-large;
+}
 
 .navbar-brand {
   padding-left: 0.3em;
@@ -43,13 +48,6 @@ td, th {
   padding: .3em;
 }
 
-
-.picture-box {
-  height: calc(100px + 1em);
-  margin-bottom: 1em;
-  padding: 0.5em;
-}
-
 main {
   flex: 1 calc(100vh - 110px);
   display: flex;
@@ -67,4 +65,16 @@ main {
   radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
   background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
   background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}
+
+@media (max-height: 600px) {
+  header {
+    display: none;
+  }
+  footer {
+    display: none;
+  }
+  main {
+    flex: 1 100vh;
+  }
 }
