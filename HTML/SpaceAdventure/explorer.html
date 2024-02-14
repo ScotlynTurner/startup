@@ -45,15 +45,15 @@
           mysterious Nexus. Now, faced with this discovery, you must decide:
         </p>
         <div id="spaceImage" class="picture-box"><img width="400px" src="spce.jpeg" alt="random" /></div>
-        <input type="radio" id="study" name="varRadio" value="study" required="required" />
-        <label for="study" onclick="window.location.href = 'ending.html';"><b>Study:</b> Dedicate time to unravel the secrets within the 
-          cosmic archive, potentially unlocking advanced technologies or historical revelations.</label>
-        <br>
+        <div class="radio-container">
+        <label for="study" onclick="window.location.href = 'ending.html';"><input type="radio" id="study" name="varRadio" value="study" required="required" />
+          <b>Study:</b> Dedicate time to unravel the secrets within the 
+          cosmic archive, potentially unlocking advanced technologies or historical revelations.</label><br>
 
-        <input type="radio" id="proceed" name="varRadio" value="proceed" required="required" />
-        <label for="proceed" onclick="window.location.href = 'ending.html';"><b>Proceed:</b> Navigate asteroid fields and unknown areas 
-          to uncover secrets.</label>
-        <br>
+        <label for="proceed" onclick="window.location.href = 'ending.html';"><input type="radio" id="proceed" name="varRadio" value="proceed" required="required" />
+          <b>Proceed:</b> Navigate asteroid fields and unknown areas 
+          to uncover secrets.</label><br>
+        </div>
         
         <button type="select">Select</button>
         

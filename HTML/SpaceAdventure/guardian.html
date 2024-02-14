@@ -44,12 +44,16 @@
           crucial decision, you must choose:
         </p>
         <div id="spaceImage" class="picture-box"><img width="400px" src="spce.jpeg" alt="random" /></div>
-        <label for="confront"><input type="radio" id="confront" name="varRadio" value="confront" /> <b>Confront:</b>
+        <div class="radio-container">
+        <label for="confront" onclick="window.location.href = 'ending.html';"><input type="radio" id="confront" name="varRadio" value="confront"/> 
+          <b>Confront:</b>
             Engage in direct confrontation with the Shadow Brood, aiming to neutralize the potential threat and protect
             the solar system's secrets.</label><br>
-        <label for="evade"><input type="radio" id="evade" name="varRadio" value="evade" /> <b>Evade:</b> Opt for a
+        <label for="evade" onclick="window.location.href = 'ending.html';"><input type="radio" id="evade" name="varRadio" value="evade"/> 
+          <b>Evade:</b> Opt for a
             strategic retreat, avoiding immediate conflict and allowing for further assessment of the Shadow Brood's
             intentions.</label><br>
+        </div>
         <button type="button">Select</button>
         
     </main>

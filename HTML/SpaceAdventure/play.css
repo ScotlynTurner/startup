@@ -19,12 +19,6 @@ menu {
   justify-content: center;
 }
 
-section {
-  margin-left: 5em;
-  margin-right: 5em;
-  font-size: x-large;
-}
-
 .navbar-brand {
   padding-left: 0.3em;
   border-bottom: solid rgb(182, 182, 182) thin;
@@ -49,18 +43,22 @@ td, th {
 }
 
 p {
-  margin-left: 3em;
-  margin-right: 3em;
+  margin-left: 5em;
+  margin-right: 5em;
+  font-size: x-large;
 }
 
-input[type="radio"] {
-  display: inline-block; /* Display radio buttons inline */
-  vertical-align: middle; /* Align radio buttons vertically */
+.radio-container label {
+  display: flex;
+  align-items: center;
 }
 
-label {
-  display: inline-block; /* Display labels inline */
-  vertical-align: middle; /* Align labels vertically */
+.radio-container input[type="radio"] {
+  margin-right: 5px; /* Adjust as needed */
+}
+
+b {
+  color: rgb(205, 66, 205);
 }
 
 main {
@@ -68,7 +66,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   font-family: "VT323";
   font-size: larger;
   padding: 2em;

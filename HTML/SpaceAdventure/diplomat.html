@@ -46,16 +46,15 @@
           and you must decide:
         </p>
         <div id="spaceImage" class="picture-box"><img width="400px" src="spce.jpeg" alt="random" /></div>
-        <input type="radio" id="negotiate" name="varRadio" value="negotiate" checked />
-        <label for="negotiate" onclick="window.location.href = 'ending.html';"><b>Negotiate:</b> Attempt to mediate and strengthen 
-          ties with the rival faction, seeking unity among the Luminara.</label>
-        <br>
+        <div class="radio-container">
+        <label for="negotiate" onclick="window.location.href = 'ending.html';"><input type="radio" id="negotiate" name="varRadio" value="negotiate" checked />
+          <b>Negotiate:</b> Attempt to mediate and strengthen 
+          ties with the rival faction, seeking unity among the Luminara.</label><br>
 
-        <input type="radio" id="depart" name="varRadio" value="depart" checked />
-        <label for="depart" onclick="window.location.href = 'ending.html';"><b>Depart:</b> Choose to leave the Luminara, avoiding 
-          potential conflict and focusing on other aspects of the Stellar Nexus.</label>
-        <br>
-        
+        <label for="depart" onclick="window.location.href = 'ending.html';"><input type="radio" id="depart" name="varRadio" value="depart" checked />
+          <b>Depart:</b> Choose to leave the Luminara, avoiding 
+          potential conflict and focusing on other aspects of the Stellar Nexus.</label><br>
+        </div>
         <button type="select">Select</button>
         
     </main>
