@@ -48,12 +48,27 @@ td, th {
   padding: .3em;
 }
 
+p {
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+input[type="radio"] {
+  display: inline-block; /* Display radio buttons inline */
+  vertical-align: middle; /* Align radio buttons vertically */
+}
+
+label {
+  display: inline-block; /* Display labels inline */
+  vertical-align: middle; /* Align labels vertically */
+}
+
 main {
   flex: 1 calc(100vh - 110px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: normal;
+
   font-family: "VT323";
   font-size: larger;
   padding: 2em;
