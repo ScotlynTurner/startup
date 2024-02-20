@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Tell browsers not to scale the viewport automatically -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpaceAdventure</title>
+    <link rel="icon" href="planet.ico" />
+    <link rel="stylesheet" href="play.css" />
+
+    <!-- Include bootstrap CSS framework -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=VT323&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-dark text-light">
+    <header class="container-fluid">
+      <h2>Space Adventure</h2>
+
+      <nav class="navbar fixed-top navbar-dark">
+        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+        <menu class="navbar-nav">
+          <li class="nav-item"><a href="home.html">Home</a></li>
+          <li class="nav-item"><a href="achievements.html">Achievements</a></li>
+          <li class="nav-item"><a href="friends.html">Friends</a></li>
+          <li class="nav-item"><a href="index.html">Login</a></li>
+        </menu>
+      </nav>
+
+      <hr />
+    </header>
+  </body>
+
+    <main class="container-fluid bg-black text-center"> 
+        <p>
+          You embrace the role of an explorer, guiding the Star Voyager through dense asteroid fields and uncharted 
+          territories within the Stellar Nexus. Amidst the challenges, you discover an ancient cosmic archive hidden on 
+          the outskirts. The archive contains valuable information about the origins of our solar system and its 
+          mysterious Nexus. Now, faced with this discovery, you must decide:
+        </p>
+        <div id="spaceImage" class="picture-box"><img width="400px" src="spce.jpeg" alt="random" /></div>
+        <div class="radio-container">
+        <label for="study" onclick="window.location.href = 'ending.html';"><input type="radio" id="study" name="varRadio" value="study" required="required" />
+          <b>Study:</b> Dedicate time to unravel the secrets within the 
+          cosmic archive, potentially unlocking advanced technologies or historical revelations.</label><br>
+
+        <label for="proceed" onclick="window.location.href = 'ending.html';"><input type="radio" id="proceed" name="varRadio" value="proceed" required="required" />
+          <b>Proceed:</b> Navigate asteroid fields and unknown areas 
+          to uncover secrets.</label><br>
+        </div>
+        
+        <button type="select">Select</button>
+        
+    </main>
+    <footer>
+      <footer class="bg-dark text-white-50">
+        <div class="container-fluid">
+          <span class="text-reset">Author Name(s)</span>
+          <a class="text-reset" href="https://github.com/ScotlynTurner/startup.git">Source</a>
+        </div>
+      </footer>
+</html>

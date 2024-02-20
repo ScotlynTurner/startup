@@ -1,0 +1,99 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-width: 375px;
+}
+
+header {
+    flex: 0 80px;
+    font-family: "VT323", monospace;
+    font-weight: 200;
+}
+
+menu {
+    flex: 1;
+    display: flex;
+    /*  overwrite Bootstrap so the menu does not wrap */
+    flex-direction: row !important;
+    list-style: none;
+    justify-content: center;
+}
+
+a:link {
+    font-size: large;
+    padding: 1em;
+    text-decoration: none;
+    color: rgb(232, 232, 155);
+  }
+
+a:visited{
+    text-decoration: none;
+    color: rgb(232, 232, 155);
+  }
+  
+  .radio-container label {
+    display: flex;
+    align-items: center;
+  }
+  
+.navbar-brand {
+    padding-left: 0.3em;
+    border-bottom: solid rgb(182, 182, 182) thin;
+}
+  
+menu .nav-item {
+    padding: 0 0.3em;
+}
+
+footer a {
+    float: right;
+}
+
+footer {
+    flex: 0 30px;
+}
+
+td, th {
+    color: rgb(255, 255, 255);
+    text-align: left;
+    padding: .3em;
+}
+  
+
+.picture-box {
+    height: calc(100px + 1em);
+    margin-bottom: 1em;
+    padding: 0.5em;
+}
+
+main {
+    flex: 1 calc(100vh - 110px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: normal;
+    font-family: "VT323";
+    font-size: larger;
+    padding: 2em;
+    background-color:black;
+    background-image:
+    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+    radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}
+
+@media (max-height: 600px) {
+    header {
+      display: none;
+    }
+    footer {
+      display: none;
+    }
+    main {
+      flex: 1 100vh;
+    }
+  }
+  
