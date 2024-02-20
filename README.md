@@ -57,6 +57,15 @@ For this deliverable I built out the structure of my application using HTML.
 - **DB/Login** - Input boxes and submit button for login. The friends and achievements tables represent data pulled from the database.
 - **WebSocket** - The date of ending achievements represent the notification of realtime games.
 
+## CSS Deliverable
+For this deliverable I properly styled the application into its final appearance.
+- **Header, footer, and main content body**
+- **Navigation elements** - I centered the navigation and changed the background color.
+- **Responsive to window resizing** - My app looks great on all window sizes and devices.
+- **Application elements** - Used good contrast and whitespace.
+- **Application text content** - Consistent fonts throughout, and size changes based on importance.
+- **Application images** - Included images as a border for Achievements and Friends. Also, there is a picture for each part of the story,
+  which will be more further implemented in JavaScript.
 
 
 notes.md = https://github.com/ScotlynTurner/startup/blob/main/notes.md
