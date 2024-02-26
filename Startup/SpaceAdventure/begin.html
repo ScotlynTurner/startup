@@ -7,6 +7,7 @@
     <title>SpaceAdventure</title>
     <link rel="icon" href="planet.ico" />
     <link rel="stylesheet" href="play.css" />
+    <script src="choices.js"></script>
 
     <!-- Include bootstrap CSS framework -->
     <link
@@ -42,22 +43,24 @@
         </body>
       </hr>
     <main class="container-fluid bg-black text-center">
+      <div id="story">
         <p>
           In the year 2150, you're aboard the spaceship "Star Voyager." Your mission: unravel the mysteries of the Stellar
           Nexus on the edge of our solar system. As you stand on the ship's deck, the captain gives a quick briefing. You have three choices:
         </p>
-        <div id="spaceImage" class="picture-box"><img width="400px" src="spce.jpeg" alt="random" /></div>
-        <div class="radio-container">
-        <label for="diplomat" onclick="window.location.href = 'diplomat.html';"><input type="radio" id="diplomat" name="varRadio" value="diplomat"/>
+      </div>
+        <div id="spaceImage" class="picture-box"><img width="500px" src="https://as1.ftcdn.net/v2/jpg/05/84/01/22/1000_F_584012290_Q6gi6v6lZSjVPfhJh0kDeP2QaO6ulfFW.jpg" alt="random" /></div>
+        <div class="radio-container" id="options">
+        <label for="diplomat" onclick="diplomat()"><input type="radio" id="diplomat" name="varRadio" value="diplomat"/>
           <b>Diplomat:</b> Seek alliances with any alien life in the Nexus.</label><br>
 
-        <label for="explorer" onclick="window.location.href = 'explorer.html';"><input type="radio" id="explorer" name="varRadio" value="explorer"/>
+        <label for="explorer" onclick="explorer()"><input type="radio" id="explorer" name="varRadio" value="explorer"/>
           <b>Explorer:</b> Navigate asteroid fields and unknown areas to uncover secrets.</label><br>
 
-        <label for="guardian" onclick="window.location.href = 'guardian.html';"><input type="radio" id="guardian" name="varRadio" value="guardian"/>
+        <label for="guardian" onclick="guardian()"><input type="radio" id="guardian" name="varRadio" value="guardian"/>
           <b>Guardian:</b> Defend against potential threats to protect solar system secrets.</label><br>
         </div>
-        <button type="select" onclick="window.location.href = 'begin.html';">Select (Placeholder)</button>
+        <!-- <button type="select" onclick="submitChoice()">Select</button> -->
         
         
     </main>
