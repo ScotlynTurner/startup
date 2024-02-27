@@ -8,7 +8,7 @@ function diplomat() {
         </p>
     `;
     document.getElementById('spaceImage').innerHTML = `
-        <img width="400px" src="https://as1.ftcdn.net/v2/jpg/02/06/53/68/1000_F_206536844_6eWEaVsUKrb4gCtgfVe1EQvWyM1JrJpo.jpg"/>
+        <img width="400px" src="https://i.pinimg.com/474x/55/b3/bd/55b3bd4ea39274399b55cbd03a3259fe.jpg"/>
     `;
     document.getElementById('options').innerHTML = `
         <label for="negotiate" onclick="negotiate()"><input type="radio" id="negotiate" name="varRadio" value="negotiate" checked />
@@ -54,7 +54,7 @@ function guardian() {
         </p>
     `;
     document.getElementById('spaceImage').innerHTML = `
-        <img width="400px" src="https://as1.ftcdn.net/v2/jpg/06/32/56/12/1000_F_632561296_ZmnnT5qzpPVQJ2NUwYmaSSyBpB2ceGAz.jpg"/>
+        <img width="300px" src="https://i.pinimg.com/474x/a7/dc/cc/a7dccc36367d5a0fa903721087523c63.jpg"/>
     `;
     document.getElementById('options').innerHTML = `
         <label for="confront" onclick="confront()"><input type="radio" id="confront" name="varRadio" value="confront"/> 
@@ -85,69 +85,98 @@ function proceed() {
 }
 
 function confront() {
+    document.getElementById('story').innerHTML = `
+        <p>
+       
+        </p>
+    `;
+    document.getElementById('spaceImage').innerHTML = `
+        <img width="400px" src="https://i.pinimg.com/474x/37/78/56/377856310f64c99ae04b999d08bbd83e.jpg"/>
+    `;
+    document.getElementById('options').innerHTML = `
+        <label for="warn" onclick="warn()"><input type="radio" id="warn" name="varRadio" value="warn"/>
+        <b>Warn:</b>Transmit a warning to their communications outpost, alerting them to the imminent danger and potentially aiding in 
+        their defense.</label><br>
+        <label for="flee" onclick="flee()"><input type="radio" id="flee" name="varRadio" value="flee"/>
+        <b>Flee:</b>Decide to avoid involvement, prioritizing the safety of the Star Voyager and its crew over intervening in the planet's 
+        plight.</label><br>
+    `;
 
 }
 
 function evade() {
     document.getElementById('story').innerHTML = `
         <p>
-            
-       
+        You choose to evade the immediate conflict with the Shadow Brood, opting for a strategic retreat to assess their intentions further.
+        As the Star Voyager navigates away from the alien faction, you realize that the Shadow Brood are headed straight towards the planet 
+        of the Bladskini people.Now faced with another critical decision, you must choose:
         </p>
     `;
     document.getElementById('spaceImage').innerHTML = `
-        <img width="400px" src="https://as1.ftcdn.net/v2/jpg/07/38/59/04/1000_F_738590473_Qvc1Mb3ckVW4OAvS53FG5ruJ5qkgg1Qy.jpg"/>
+        <img width="400px" src="https://i.pinimg.com/474x/37/78/56/377856310f64c99ae04b999d08bbd83e.jpg"/>
     `;
     document.getElementById('options').innerHTML = `
         <label for="warn" onclick="warn()"><input type="radio" id="warn" name="varRadio" value="warn"/>
-        <b>Warn:</b> </label><br>
-
+        <b>Warn:</b>Transmit a warning to their communications outpost, alerting them to the imminent danger and potentially aiding in 
+        their defense.</label><br>
         <label for="flee" onclick="flee()"><input type="radio" id="flee" name="varRadio" value="flee"/>
-        <b>Flee:</b> </label><br>
+        <b>Flee:</b>Decide to avoid involvement, prioritizing the safety of the Star Voyager and its crew over intervening in the planet's 
+        plight.</label><br>
     `;
 }
 
 function warn() {
+    document.getElementById('story').innerHTML = `
+        <p>
+        After sending out a signal, you land on the Bladskini planet. <br>
+        "Quick! Take me to your leader!" You order a startled Bladskini. <br>
+        They take you to their queen, to whom you relay your urgent warning about the Shadow Brood. The queen thanks you, and begins to
+        prepare for war. Now what?
+        </p>
+    `;
+    document.getElementById('spaceImage').innerHTML = `
+        <img width="400px" src="https://i.pinimg.com/474x/37/78/56/377856310f64c99ae04b999d08bbd83e.jpg"/>
+    `;
+    document.getElementById('options').innerHTML = `
+        <label for="prepare" onclick="prepare()"><input type="radio" id="prepare" name="varRadio" value="prepare"/>
+        <b>Prepare:</b>Help the Bladskini prepare to fight the Shadow Brood. After all, your job is to guard the galaxy.</label><br>
+        <label for="flee" onclick="flee()"><input type="radio" id="flee" name="varRadio" value="flee"/>
+        <b>Escape:</b>Decide to avoid involvement, prioritizing the safety of the Star Voyager and its crew over intervening in the planet's 
+        plight.</label><br>
+    `;
+
+}
+
+function prepare() {
+    document.getElementById('story').innerHTML = `
+        <p>
+        You gather weapons and command forces under the direction of the queen. After hours of an intense battle, the Shadow Brood general
+        sends a radio signal to you. It says: <br>
+        <i>
+        Surrender! You are no match for the Shadow Brood Empire!
+        </i>
+        </p>
+    `;
+    document.getElementById('spaceImage').innerHTML = `
+        <img width="200px" src="https://i.pinimg.com/474x/37/78/56/377856310f64c99ae04b999d08bbd83e.jpg"/>
+    `;
+    document.getElementById('options').innerHTML = `
+        <label for="fight" onclick="fight()"><input type="radio" id="fight" name="varRadio" value="fight"/>
+        <b>Fight:</b>No way! They started this, and you're going to finish it.</label><br>
+        <label for="surrender" onclick="surrender()"><input type="radio" id="surrender" name="varRadio" value="surrender"/>
+        <b>Surrender:</b>They're too powerful... There's no way we can win this.</label><br>
+    `;
 
 }
 
 function flee() {
-
+    window.location.href = 'ending.html?outcome=escape';
 }
 
+function fight() {
+    window.location.href = 'ending.html?outcome=fight';
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var selectedOption = null;
-
-// function submitChoice() {
-//     if (selectedOption === 'diplomat') {
-//         // Code for diplomat option
-//         diplomat();
-//     } else if (selectedOption === 'explorer') {
-//         // Code for explorer option
-//         console.log('Explorer selected');
-//     } else if (selectedOption === 'guardian') {
-//         // Code for guardian option
-//         console.log('Guardian selected');
-//     }
-// }
-
-// document.querySelectorAll('input[type="radio"]').forEach(function(radio) {
-//     radio.addEventListener('change', function() {
-//         selectedOption = this.value;
-//     });
-// });
+function surrender() {
+    window.location.href = 'ending.html?outcome=surrender';
+}

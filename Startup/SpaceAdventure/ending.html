@@ -37,13 +37,29 @@
     </header>
 
     <main class="container-fluid bg-black text-center">
-        <p>This is a placeholder to describe whatever ending you got</p>
-        <div id="spaceImage" class="picture-box"><img width="400px" src="spce.jpeg" alt="random" /></div>
+      <div id="message"></div>
+    <div id="spaceImage"></div>
+
+    <script src="ending.js"></script>
+    <script>
+        // Function to get URL parameter
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        };
+
+        // Get the outcome parameter from the URL
+        var outcome = getUrlParameter('outcome');
+        console.log('Outcome:', outcome);
+        // Call the updateEnding function with the outcome parameter
+        updateEnding(outcome);
+    </script>
         <h1>GAME OVER</h1>
         <button onclick="window.location.href = 'home.html';">Play Again</button><br>
         <button onclick="window.location.href = 'achievements.html';">Achievements</button><br>
         <button onclick="window.location.href = 'friends.html';">Friends</button><br>
-
     </main>
 
     <footer>
