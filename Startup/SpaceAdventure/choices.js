@@ -59,8 +59,7 @@ function guardian() {
     document.getElementById('options').innerHTML = `
         <label for="confront" onclick="confront()"><input type="radio" id="confront" name="varRadio" value="confront"/> 
         <b>Confront:</b>
-        Engage in direct confrontation with the Shadow Brood, aiming to neutralize the potential threat and protect
-        the solar system's secrets.</label><br>
+        Engage in direct confrontation with the Shadow Brood, aiming to neutralize the potential threat.</label><br>
         <label for="evade" onclick="evade()"><input type="radio" id="evade" name="varRadio" value="evade"/> 
         <b>Evade:</b>
         Opt for a strategic retreat, avoiding immediate conflict and allowing for further assessment of the Shadow Brood's
@@ -87,20 +86,42 @@ function proceed() {
 function confront() {
     document.getElementById('story').innerHTML = `
         <p>
-       
+        You radio to the Shadow Brood, asking permission to dock, and they open the docking window. You land inside their spaceship and 
+        are immediately taken to their general. He speaks to you in an alien dialect you can't understand without your radio. Given the
+        language barrier, you think of other ways to communicate. Which way would be most effective to put an end to thir threats?
         </p>
     `;
     document.getElementById('spaceImage').innerHTML = `
-        <img width="400px" src="https://i.pinimg.com/474x/37/78/56/377856310f64c99ae04b999d08bbd83e.jpg"/>
+        <img width="300px" src="https://i.pinimg.com/474x/b6/4e/25/b64e253f81325ffb30697b3202576a2b.jpg"/>
     `;
     document.getElementById('options').innerHTML = `
-        <label for="warn" onclick="warn()"><input type="radio" id="warn" name="varRadio" value="warn"/>
-        <b>Warn:</b>Transmit a warning to their communications outpost, alerting them to the imminent danger and potentially aiding in 
-        their defense.</label><br>
-        <label for="flee" onclick="flee()"><input type="radio" id="flee" name="varRadio" value="flee"/>
-        <b>Flee:</b>Decide to avoid involvement, prioritizing the safety of the Star Voyager and its crew over intervening in the planet's 
-        plight.</label><br>
+        <label for="danceOff" onclick="danceOff()"><input type="radio" id="danceOff" name="varRadio" value="danceOff"/>
+        <b>Dance-off:</b>If bees can communicate through the power of dance, it should work on aliens too.</label><br>
+        <label for="lullaby" onclick="lullaby()"><input type="radio" id="lullaby" name="varRadio" value="lullaby"/>
+        <b>Lullaby:</b>Use your soothing vocals. They can't hurt anyone if they're asleep.</label><br>
     `;
+}
+
+function danceOff() {
+    document.getElementById('story').innerHTML = `
+    <p>
+    You radio to the Shadow Brood, asking permission to dock, and they open the docking window. You land inside their spaceship and 
+    are immediately taken to their general. He speaks to you in an alien dialect you can't understand without your radio. Given the
+    language barrier, you think of other ways to communicate. Which way would be most effective to put an end to thir threats?
+    </p>
+    `;
+    document.getElementById('spaceImage').innerHTML = `
+    <img width="300px" src="https://i.pinimg.com/474x/b6/4e/25/b64e253f81325ffb30697b3202576a2b.jpg"/>
+    `;
+    document.getElementById('options').innerHTML = `
+    <label for="moonWalk" onclick="moonWalk()"><input type="radio" id="moonWalk" name="varRadio" value="moonWalk"/>
+    <b>Moon Walk:</b>Channnel your inner Michael Jackson and walk like there's no gravity.</label><br>
+    <label for="breakDance" onclick="breakDance()"><input type="radio" id="breakDance" name="varRadio" value="breakDance"/>
+    <b>Break Dance:</b>Pop, lock, jam, and break.</label><br>
+`;
+}
+
+function lullaby() {
 
 }
 
@@ -158,7 +179,7 @@ function prepare() {
         </p>
     `;
     document.getElementById('spaceImage').innerHTML = `
-        <img width="200px" src="https://i.pinimg.com/474x/37/78/56/377856310f64c99ae04b999d08bbd83e.jpg"/>
+        <img width="200px" src="https://i.pinimg.com/474x/33/ee/18/33ee183952363a379e3f4ed51dc04f49.jpg"/>
     `;
     document.getElementById('options').innerHTML = `
         <label for="fight" onclick="fight()"><input type="radio" id="fight" name="varRadio" value="fight"/>
@@ -166,7 +187,6 @@ function prepare() {
         <label for="surrender" onclick="surrender()"><input type="radio" id="surrender" name="varRadio" value="surrender"/>
         <b>Surrender:</b>They're too powerful... There's no way we can win this.</label><br>
     `;
-
 }
 
 function flee() {
@@ -179,4 +199,20 @@ function fight() {
 
 function surrender() {
     window.location.href = 'ending.html?outcome=surrender';
+}
+
+function comingSoon(){
+    document.getElementById('story').innerHTML = `
+        <p>
+        Unfortunately this part of the story is still in progress as a black hole has eaten it. Try again later!
+        </i>
+        </p>
+    `;
+    document.getElementById('spaceImage').innerHTML = `
+        <img width="300px" src="https://i.pinimg.com/474x/d1/21/c0/d121c0b0e382e3cb40bd6c7decaf5bc4.jpg"/>
+    `;
+    document.getElementById('options').innerHTML = `
+        <h1>Coming Soon</h1>
+    `;
+
 }

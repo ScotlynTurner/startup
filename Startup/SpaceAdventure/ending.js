@@ -28,6 +28,16 @@ function updateEnding(outcome) {
             break;
 
         case 'surrender':
+            messageDiv.innerHTML = `
+                You radio back, 
+                <i>Ok you got me :/</i> <br>
+                as you use land your spaceship on the now-on-fire planet. The people of Bladskini put down their weapons, 
+                and the Shodow Brood take over, enslaving your people.
+            `;
+            spaceImageDiv.innerHTML = `
+                <img width="300px" src="https://i.pinimg.com/474x/b9/ad/47/b9ad47998d1f459122132a10a771bb14.jpg"/>
+            `;
+            var achievement = " Smooth Operator: Negotiated the Surrender of an Entire Planet";
             break;
         // Add more cases for other outcomes if needed
         default:
