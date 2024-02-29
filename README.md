@@ -69,10 +69,10 @@ For this deliverable I properly styled the application into its final appearance
 
 ## JavaScript Deliverable
 For this deliverable I implemented by JavaScript so that the application works for a single user. I also added placeholders for future technology.
-**Login** - When you press enter or the login button it takes you to the home page.
-**Database** - Displayed the achievements. Currently this is stored and retrieved from local storage, but it will be replaced with the database data later.
-**WebSocket** - I used the setInterval function to periodically notify about a random friend's achievement. This will be replaced with WebSocket messages later.
-**Application logic** - Each option pressed will replace the html from the page with new html.
+- **Login** - When you press enter or the login button it takes you to the home page.
+- **Database** - Displayed the achievements. Currently this is stored and retrieved from local storage, but it will be replaced with the database data later.
+- **WebSocket** - I used the setInterval function to periodically notify about a random friend's achievement. This will be replaced with WebSocket messages later.
+- **Application logic** - Each option pressed will replace the html from the page with new html.
 
 
 notes.md = https://github.com/ScotlynTurner/startup/blob/main/notes.md
