@@ -201,6 +201,14 @@ function surrender() {
     window.location.href = 'ending.html?outcome=surrender';
 }
 
+function moonWalk() {
+    window.location.href = 'ending.html?outcome=moonWalk';
+}
+
+function breakDance() {
+    window.location.href = 'ending.html?outcome=breakDance';
+}
+
 function comingSoon(){
     document.getElementById('story').innerHTML = `
         <p>

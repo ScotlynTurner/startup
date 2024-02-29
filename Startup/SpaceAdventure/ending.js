@@ -1,6 +1,7 @@
 function updateEnding(outcome) {
     var messageDiv = document.getElementById('message');
     var spaceImageDiv = document.getElementById('spaceImage');
+    var achievement;
 
     switch (outcome) {
         case 'escape':
@@ -11,7 +12,7 @@ function updateEnding(outcome) {
             spaceImageDiv.innerHTML = `
                 <img width="300px" src="https://i.pinimg.com/474x/12/16/39/121639f4f032aac4c4d2a16815431f73.jpg"/>
             `;
-            var achievement = "Let 'em burn";
+            achievement = "Let 'em burn";
             break;
 
         case 'fight':
@@ -24,7 +25,7 @@ function updateEnding(outcome) {
             spaceImageDiv.innerHTML = `
                 <img width="300px" src="https://i.pinimg.com/474x/11/b8/ee/11b8ee3642c82ae6d464c744a26df071.jpg"/>
             `;
-            var achievement = "I Need A Hero";
+            achievement = "I Need A Hero";
             break;
 
         case 'surrender':
@@ -37,12 +38,79 @@ function updateEnding(outcome) {
             spaceImageDiv.innerHTML = `
                 <img width="300px" src="https://i.pinimg.com/474x/b9/ad/47/b9ad47998d1f459122132a10a771bb14.jpg"/>
             `;
-            var achievement = " Smooth Operator: Negotiated the Surrender of an Entire Planet";
+            achievement = "Smooth Operator: Negotiated the Surrender of an Entire Planet";
+            break;
+            
+        case 'moonWalk':
+            messageDiv.innerHTML = `
+                The Shadow Brood general looks impressed. He understands your message and dances back, <i>bro I didn't know you were
+                chill like that.</i><br>
+                He turns the ship around and heads back to his home planet. You smile, leaving on your spaceship with one more war 
+                avoided.
+            `;
+            spaceImageDiv.innerHTML = `
+                <img width="300px" src="https://i.pinimg.com/474x/8e/00/ea/8e00eaee31a846bd4d68adf0770bc117.jpg"/>
+            `;
+            achievement = "Moves like Jagger";
+            break;
+
+        case 'breakDance':
+            messageDiv.innerHTML = `
+                The Shadow Brood general looks terrifed. Your popping, locking, jamming, and breaking seemed to make the aliens feel 
+                threatened. Before you can explain 
+            `;
+            spaceImageDiv.innerHTML = `
+                <img width="300px" src="https://i.pinimg.com/474x/b9/ad/47/b9ad47998d1f459122132a10a771bb14.jpg"/>
+            `;
+            achievement = "Smooth Operator: Negotiated the Surrender of an Entire Planet";
             break;
         // Add more cases for other outcomes if needed
         default:
             messageDiv.innerText = "Unknown outcome.";
             break;
     }
+
+    var name = localStorage.getItem("userName");
+    var achievements = JSON.parse(localStorage.getItem("achievements") || "[]");
+    achievements.push({ name: name, achievement: achievement, date: new Date().toLocaleDateString() });
+    localStorage.setItem("achievements", JSON.stringify(achievements));
     alert("Achievement Unlocked! " + achievement);
+}
+
+// use later
+class Achievement {
+    saveScore(achievement) {
+        const userName = this.getPlayerName();
+        let achievements = [];
+        const achievementsText = localStorage.getItem("achievements");
+        if (achievementsText) {
+          achievement = JSON.parse(achievementsText);
+        }
+        achievements = this.updateAchievement(userName, achievement, achievements);
+    
+        localStorage.setItem("achievements", JSON.stringify(achievements));
+    }
+    
+    getPlayerName() {
+        return localStorage.getItem('userName') ?? 'Mystery player';
+    }
+    
+    updateAchievement(userName, achievement, achievements) {
+        const date = new Date().toLocaleDateString();
+        const newAchievement = { name: userName, achievement: achievement, achievements: achievements };
+    
+        let found = false;
+        for (const [i, prevEnd] of achievements.entries()) {
+          if (achievement === prevEnd.achievement) {
+            found = true;
+            break;
+          }
+        }
+    
+        if (!found) {
+          achievements.push(newAchievement);
+        }
+    
+        return scores;
+      }
 }

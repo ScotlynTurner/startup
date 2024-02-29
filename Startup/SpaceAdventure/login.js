@@ -1,7 +1,7 @@
 function login() {
-    const nameEl = document.querySelector("#name");
-    localStorage.setItem("userName", nameEl.value);
-    localStorage.setItem("password", nameEl.value);
-    window.location.href = "home.html";
-  }
-  
+  const userName = document.querySelector("#userName").value;
+  localStorage.setItem("userName", userName);
+  const password = document.querySelector("#password").value;
+  localStorage.setItem("password", password);
+  window.location.href = "home.html";
+}

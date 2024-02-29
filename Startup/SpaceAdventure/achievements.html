@@ -39,30 +39,21 @@
     </header>
 
     <main>
-      <h2>Achievements for User: myUserName</h2>
+      <h2 id="name"></h2>
+      <script>
+        document.getElementById("name").innerHTML = "Achievements for User: " + localStorage.getItem("userName");
+      </script>
       <div id="picture" class="picture-box"><img width="400px" src="border.png" alt="random" /></div>
 
       <table id = "table-data">
         <thead>
           <tr>
+            <th>Name</th>
             <th>Ending</th>
             <th>Date</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>Became an alien leader</td>
-            <td>January 8, 2024</td>
-          </tr>
-          <tr>
-            <td>Got hit with an asteroid</td>
-            <td>January 5, 2024</td>
-          </tr>
-          <tr>
-            <td>Caused the universe to implode</td>
-            <td>January 1, 2024</td>
-          </tr>
-        </tbody>
+        <tbody id="achievements"></tbody>
       </table>
     </main>
 
@@ -72,5 +63,6 @@
         <a class="text-reset" href="https://github.com/ScotlynTurner/startup.git">Source</a>
       </div>
     </footer>
+    <script src="achievements.js"></script>
   </body>
 </html>
