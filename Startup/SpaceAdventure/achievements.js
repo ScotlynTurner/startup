@@ -35,3 +35,5 @@ function loadAchievements(userName) {
 
   var userName = localStorage.getItem("userName");
   loadAchievements(userName);
+
+

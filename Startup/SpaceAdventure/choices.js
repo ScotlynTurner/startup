@@ -246,3 +246,9 @@ function comingSoon(){
     `;
 
 }
+
+// setInterval(() => {
+//     alert("RandomUser got achievement!");
+//     chatText.innerHTML =
+//       `<div class="event"><span class="player-event">Eich</span> scored ${score}</div>` + chatText.innerHTML;
+//   }, 8000);
