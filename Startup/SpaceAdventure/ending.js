@@ -2,7 +2,7 @@ function updateEnding(outcome) {
     var messageDiv = document.getElementById('message');
     var spaceImageDiv = document.getElementById('spaceImage');
     var achievement;
-
+    var achievements = [];
     switch (outcome) {
         case 'escape':
             messageDiv.innerHTML = `
@@ -62,19 +62,31 @@ function updateEnding(outcome) {
             spaceImageDiv.innerHTML = `
                 <img width="300px" src="https://i.pinimg.com/474x/b9/ad/47/b9ad47998d1f459122132a10a771bb14.jpg"/>
             `;
-            achievement = "Smooth Operator: Negotiated the Surrender of an Entire Planet";
+            achievement = "Smooth Operator";
             break;
         // Add more cases for other outcomes if needed
         default:
             messageDiv.innerText = "Unknown outcome.";
             break;
     }
-
     var name = localStorage.getItem("userName");
+    if (isAchievementInList(achievement)) {
+        return;
+    } else {
+        unlockAchievement(name, achievement);
+        alert("Achievement Unlocked! " + achievement);
+    }
+}
+
+function unlockAchievement(userName, achievementName) {
     var achievements = JSON.parse(localStorage.getItem("achievements") || "[]");
-    achievements.push({ name: name, achievement: achievement, date: new Date().toLocaleDateString() });
+    achievements.push({ name: userName, achievement: achievementName, date: new Date().toLocaleDateString() });
     localStorage.setItem("achievements", JSON.stringify(achievements));
-    alert("Achievement Unlocked! " + achievement);
+}
+
+function isAchievementInList(achievementName) {
+    var achievements = JSON.parse(localStorage.getItem("achievements") || "[]");
+    return achievements.some(achievement => achievement.achievement === achievementName);
 }
 
 // use later

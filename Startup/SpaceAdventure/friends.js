@@ -1,4 +1,5 @@
-function loadAchievements(userName) {
+function loadFriends() {
+    // TODO: add friends' achievements
     let achievements = [];
     const achievementText = localStorage.getItem("achievements");
     if (achievementText) {
@@ -10,19 +11,19 @@ function loadAchievements(userName) {
     }
   
     const tableBodyEl = document.querySelector("#achievements");
-    //const userAchievements = achievements;
-
-    const userAchievements = achievements.filter(achievement => achievement.name === userName);
   
-    if (userAchievements.length) {
-      for (const achievement of userAchievements) {
+    if (achievements.length) {
+      for (const achievement of achievements) {
+        const nameTdEl = document.createElement('td');
         const endingTdEl = document.createElement('td');
         const dateTdEl = document.createElement('td');
   
+        nameTdEl.textContent = achievement.name;
         endingTdEl.textContent = achievement.achievement;
         dateTdEl.textContent = achievement.date;
   
         const rowEl = document.createElement('tr');
+        rowEl.appendChild(nameTdEl);
         rowEl.appendChild(endingTdEl);
         rowEl.appendChild(dateTdEl);
   
@@ -32,6 +33,4 @@ function loadAchievements(userName) {
       tableBodyEl.innerHTML = '<tr><td colspan="3">Follow the story to get an achievement</td></tr>';
     }
   }
-
-  var userName = localStorage.getItem("userName");
-  loadAchievements(userName);
+  loadFriends();
