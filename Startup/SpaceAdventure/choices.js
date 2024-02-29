@@ -122,7 +122,21 @@ function danceOff() {
 }
 
 function lullaby() {
-
+    document.getElementById('story').innerHTML = `
+    <p>
+    You sing a tune so soft and graceful that all the Shadow Brood around you begin to drift off into a dreamy sleep. With the general now
+    in a vulnerable position, you must decide:
+    </p>
+    `;
+    document.getElementById('spaceImage').innerHTML = `
+    <img width="300px" src="https://i.pinimg.com/474x/b6/4e/25/b64e253f81325ffb30697b3202576a2b.jpg"/>
+    `;
+    document.getElementById('options').innerHTML = `
+    <label for="kill" onclick="kill()"><input type="radio" id="kill" name="varRadio" value="kill"/>
+    <b>Kill:</b>Take advantage of the opportunity and release a deadly chemical that only you arre immune to.</label><br>
+    <label for="awkward" onclick="awkward()"><input type="radio" id="awkward" name="varRadio" value="awkward"/>
+    <b>Stand Awkwardly:</b>Honestly, you didn't really think this would work. So...</label><br>
+    `;
 }
 
 function evade() {
@@ -207,6 +221,14 @@ function moonWalk() {
 
 function breakDance() {
     window.location.href = 'ending.html?outcome=breakDance';
+}
+
+function kill() {
+    window.location.href = 'ending.html?outcome=kill';
+}
+
+function awkward() {
+    window.location.href = 'ending.html?outcome=awkward';
 }
 
 function comingSoon(){

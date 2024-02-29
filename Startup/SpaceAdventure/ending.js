@@ -38,7 +38,7 @@ function updateEnding(outcome) {
             spaceImageDiv.innerHTML = `
                 <img width="300px" src="https://i.pinimg.com/474x/b9/ad/47/b9ad47998d1f459122132a10a771bb14.jpg"/>
             `;
-            achievement = "Smooth Operator: Negotiated the Surrender of an Entire Planet";
+            achievement = "Smooth Operator";
             break;
             
         case 'moonWalk':
@@ -57,12 +57,35 @@ function updateEnding(outcome) {
         case 'breakDance':
             messageDiv.innerHTML = `
                 The Shadow Brood general looks terrifed. Your popping, locking, jamming, and breaking seemed to make the aliens feel 
-                threatened. Before you can explain 
+                threatened. Before you can explain, they shoot you down with lasers out of fear.
             `;
             spaceImageDiv.innerHTML = `
                 <img width="300px" src="https://i.pinimg.com/474x/b9/ad/47/b9ad47998d1f459122132a10a771bb14.jpg"/>
             `;
-            achievement = "Smooth Operator";
+            achievement = "Should've stuck to the status quo";
+            break;
+
+        case 'awkward':
+            messageDiv.innerHTML = `
+                Eventually, the Shadow Brood wake up. <i>Wow, that was the best nap of my life!</i> they say. Turns out they were just
+                grumpy from the lack of sleep. The general apologizes to you and takes his fleet of ships to the Milky Way for some
+                hot chocolate.
+            `;
+            spaceImageDiv.innerHTML = `
+                <img width="300px" src="https://i.pinimg.com/474x/82/89/cf/8289cf305f2bd5a68a625d329ad4b1ea.jpg"/>
+            `;
+            achievement = "Hot, hot, hot, we got it!";
+            break;
+
+        case 'kill':
+            messageDiv.innerHTML = `
+                You release the poison and book it out of there. Eventually, the rest of the Shadow brood on the ship find out what happened, 
+                but by then you. Once they see what you did to their general, they angrily look around for you, but by then you're long gone.
+            `;
+            spaceImageDiv.innerHTML = `
+                <img width="300px" src="https://i.pinimg.com/474x/b9/ad/47/b9ad47998d1f459122132a10a771bb14.jpg"/>
+            `;
+            achievement = "Houdini";
             break;
         // Add more cases for other outcomes if needed
         default:
