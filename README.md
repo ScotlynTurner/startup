@@ -59,13 +59,20 @@ For this deliverable I built out the structure of my application using HTML.
 
 ## CSS Deliverable
 For this deliverable I properly styled the application into its final appearance.
-- **Header, footer, and main content body**
+- **Header**, footer, and main content body**
 - **Navigation elements** - I centered the navigation and changed the background color.
 - **Responsive to window resizing** - My app looks great on all window sizes and devices.
 - **Application elements** - Used good contrast and whitespace.
 - **Application text content** - Consistent fonts throughout, and size changes based on importance.
 - **Application images** - Included images as a border for Achievements and Friends. Also, there is a picture for each part of the story,
   which will be more further implemented in JavaScript.
+
+## JavaScript Deliverable
+For this deliverable I implemented by JavaScript so that the application works for a single user. I also added placeholders for future technology.
+**Login** - When you press enter or the login button it takes you to the home page.
+**Database** - Displayed the achievements. Currently this is stored and retrieved from local storage, but it will be replaced with the database data later.
+**WebSocket** - I used the setInterval function to periodically notify about a random friend's achievement. This will be replaced with WebSocket messages later.
+**Application logic** - Each option pressed will replace the html from the page with new html.
 
 
 notes.md = https://github.com/ScotlynTurner/startup/blob/main/notes.md
