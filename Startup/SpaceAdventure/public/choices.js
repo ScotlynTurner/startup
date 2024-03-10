@@ -11,13 +11,11 @@ function diplomat() {
         <img width="400px" src="https://i.pinimg.com/474x/55/b3/bd/55b3bd4ea39274399b55cbd03a3259fe.jpg"/>
     `;
     document.getElementById('options').innerHTML = `
-        <label for="negotiate" onclick="negotiate()"><input type="radio" id="negotiate" name="varRadio" value="negotiate" checked />
-        <b>Negotiate:</b> Attempt to mediate and strengthen 
-        ties with the rival faction, seeking unity among the Luminara.</label><br>
-
-        <label for="depart" onclick="depart()"><input type="radio" id="depart" name="varRadio" value="depart" checked />
-        <b>Depart:</b> Choose to leave the Luminara, avoiding 
-        potential conflict and focusing on other aspects of the Stellar Nexus.</label><br>
+        <label for="negotiate" onclick="negotiate()"><input type="radio" id="negotiate" name="varRadio" value="negotiate" />
+        <b>Negotiate:</b> Attempt to mediate and strengthen ties with the rival faction, seeking unity among the Luminara.</label><br>
+        <label for="depart" onclick="depart()"><input type="radio" id="depart" name="varRadio" value="depart" />
+        <b>Depart:</b> Choose to leave the Luminara, avoiding potential conflict and focusing on other aspects of the Stellar 
+        Nexus.</label><br>
     `;
 }
 
@@ -34,11 +32,10 @@ function explorer() {
         <img width="400px" src="https://as1.ftcdn.net/v2/jpg/05/68/56/06/1000_F_568560649_aEHkLsG3oefYUuOFi3y8lo72ZZ9d3h6A.jpg"/>
     `;
     document.getElementById('options').innerHTML = `
-        <label for="study" onclick="study()"><input type="radio" id="study" name="varRadio" value="study" required="required" />
+        <label for="study" onclick="study()"><input type="radio" id="study" name="varRadio" value="study" />
         <b>Study:</b> Dedicate time to unravel the secrets within the 
         cosmic archive, potentially unlocking advanced technologies or historical revelations.</label><br>
-
-        <label for="proceed" onclick="proceed()"><input type="radio" id="proceed" name="varRadio" value="proceed" required="required" />
+        <label for="proceed" onclick="proceed()"><input type="radio" id="proceed" name="varRadio" value="proceed" />
         <b>Proceed:</b> Navigate asteroid fields and unknown areas 
         to uncover secrets.</label><br>
     `;
@@ -68,7 +65,20 @@ function guardian() {
 }
 
 function negotiate() {
-    
+    document.getElementById('story').innerHTML = `
+        <p>
+        
+        </p>
+    `;
+    document.getElementById('spaceImage').innerHTML = `
+        <img width="400px" src="https://i.pinimg.com/474x/55/b3/bd/55b3bd4ea39274399b55cbd03a3259fe.jpg"/>
+    `;
+    document.getElementById('options').innerHTML = `
+        <label for="takeOffer" onclick="takeOffer()"><input type="radio" id="takeOffer" name="varRadio" value="takeOffer"/>
+        <b>Take Offer:</b> ////</label><br>
+        <label for="deny" onclick="deny()"><input type="radio" id="deny" name="varRadio" value="deny"/>
+        <b>Deny Offer:</b> ////</label><br>
+    `; 
 }
 
 function depart() {
