@@ -43,6 +43,9 @@
             <button type="submit" id="loginButton">Login</button>
         </form>
     </section>
+    <p class="spaceFacts">
+        <textarea id="factTextBox" rows="2" cols="50" readonly></textarea>
+    </p>
 </main>
 <footer class="bg-dark text-white-50">
     <div class="container-fluid">
@@ -50,6 +53,27 @@
         <a class="text-reset" href="https://github.com/ScotlynTurner/startup.git">Source</a>
     </div>
 </footer>
+<script>
+    // Function to update the text box with the fact
+    function updateFactTextBox(fact) {
+      const factTextBox = document.querySelector("#factTextBox");
+      factTextBox.value = fact;
+    }
+
+
+    fetch('https://space-facts.vercel.app/blackout_yash/space-facts/api?length=1')
+  .then(response => response.json())
+  .then(data => {
+    if (data && data.length > 0) {
+      updateFactTextBox(data[0].fact);
+    } else {
+      console.error('Empty response or invalid data format');
+    }
+  })
+  .catch(error => {
+    console.error('Error fetching space facts:', error);
+  });
+</script>
 <script src="login.js"></script>
 </body>
 </html>
