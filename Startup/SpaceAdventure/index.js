@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
@@ -7,46 +8,44 @@ const port = process.argv.length > 2 ? process.argv[2] : 3000;
 // JSON body parsing using built-in middleware
 app.use(express.json());
 
-// Serve up the front-end static content hosting
-app.use(express.static('public'));
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Router for service endpoints
 var apiRouter = express.Router();
-app.use(`/api`, apiRouter);
+app.use('/api', apiRouter);
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
-  res.sendFile('index.html', { root: 'startup/Startup/SpaceAdventure/public' });
+  res.sendFile('index.html', { root: path.join(__dirname, 'public') });
 });
 
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
-});
+let achievements = [];
 
 // GetAchievements
-apiRouter.get('/achievements', (_req, res) => {
+apiRouter.get('/achievements', (req, res) => {
+  const { username } = req.query;
+  if (!username) {
+    return res.status(400).send('Username is required');
+  }
+
+  const userAchievements = achievements.filter(achievement => achievement.username === username);
+  res.send(userAchievements);
+});
+
+apiRouter.get('/achievements/all', (req, res) => {
   res.send(achievements);
 });
 
 // SubmitAchievement
 apiRouter.post('/achievements', (req, res) => {
-  scores = updateAchievements(req.body, achievements);
+  const newAchievement = req.body;
+  let achievements = JSON.parse(localStorage.getItem('achievements')) || [];
+  achievements.push(newAchievement);
+  localStorage.setItem('achievements', JSON.stringify(achievements));
   res.send(achievements);
 });
 
-// updateAchievements considers a new achievement for inclusion in the achievements.
-// The achievements are saved in memory and disappear whenever the service is restarted.
-let achievements = [];
-function updateAchievements(newAchievement, achievements) {
-  let found = false;
-  for (const [i, prevAchievement] of achievements.entries()) {
-      achievements.splice(i, 0, newAchievement);
-      found = true;
-  }
-
-  if (!found) {
-    achievements.push(newAchievement);
-  }
-
-  return achievements;
-}
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});

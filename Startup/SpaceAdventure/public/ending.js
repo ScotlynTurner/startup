@@ -2,7 +2,6 @@ function updateEnding(outcome) {
     var messageDiv = document.getElementById('message');
     var spaceImageDiv = document.getElementById('spaceImage');
     var achievement;
-    var achievements = [];
     switch (outcome) {
         case 'escape':
             messageDiv.innerHTML = `
@@ -92,60 +91,58 @@ function updateEnding(outcome) {
             messageDiv.innerText = "Unknown outcome.";
             break;
     }
-    var name = localStorage.getItem("userName");
-    if (isAchievementInList(achievement)) {
-        return;
-    } else {
-        unlockAchievement(name, achievement);
-        alert("Achievement Unlocked! " + achievement);
-    }
+    var name = localStorage.getItem("username");
+    unlockAchievement(name, achievement);
+    alert("Achievement Unlocked! " + achievement);
 }
 
-function unlockAchievement(userName, achievementName) {
-    var achievements = JSON.parse(localStorage.getItem("achievements") || "[]");
-    achievements.push({ name: userName, achievement: achievementName, date: new Date().toLocaleDateString() });
-    localStorage.setItem("achievements", JSON.stringify(achievements));
+function unlockAchievement(username, achievement) {
+    const date = new Date().toLocaleDateString();
+    const newAchievement = { username, achievement, date };
+
+    // Save the achievement to the server
+    fetch('/api/achievements/all', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newAchievement)
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('Achievement unlocked and saved to database.');
+        } else {
+            console.error('Failed to unlock achievement:', response.status, response.statusText);
+        }
+    })
+    .catch(error => {
+        console.error('Error unlocking achievement:', error);
+    });
+
+    // Store the achievement in local storage
+    let achievements = JSON.parse(localStorage.getItem('achievements')) || [];
+    achievements.push(newAchievement);
+    localStorage.setItem('achievements', JSON.stringify(achievements));
 }
 
-function isAchievementInList(achievementName) {
-    var achievements = JSON.parse(localStorage.getItem("achievements") || "[]");
-    return achievements.some(achievement => achievement.achievement === achievementName);
-}
+async function isAchievementInList(achievementName) {
+    const username = localStorage.getItem("username");
+    if (!username) {
+        console.error('Username not found in local storage.');
+        return false;
+    }
 
-// use later
-class Achievement {
-    saveScore(achievement) {
-        const userName = this.getPlayerName();
-        let achievements = [];
-        const achievementsText = localStorage.getItem("achievements");
-        if (achievementsText) {
-          achievement = JSON.parse(achievementsText);
+    try {
+        const response = await fetch(`/api/achievements?username=${username}`);
+        if (!response.ok) {
+            console.error('Failed to fetch achievements:', response.status, response.statusText);
+            return false;
         }
-        achievements = this.updateAchievement(userName, achievement, achievements);
-    
-        localStorage.setItem("achievements", JSON.stringify(achievements));
+
+        const achievements = await response.json();
+        return achievements.some(achievement => achievement.achievement === achievementName);
+    } catch (error) {
+        console.error('Error fetching achievements:', error);
+        return false;
     }
-    
-    getPlayerName() {
-        return localStorage.getItem('userName') ?? 'Mystery player';
-    }
-    
-    updateAchievement(userName, achievement, achievements) {
-        const date = new Date().toLocaleDateString();
-        const newAchievement = { name: userName, achievement: achievement, achievements: achievements };
-    
-        let found = false;
-        for (const [i, prevEnd] of achievements.entries()) {
-          if (achievement === prevEnd.achievement) {
-            found = true;
-            break;
-          }
-        }
-    
-        if (!found) {
-          achievements.push(newAchievement);
-        }
-    
-        return scores;
-      }
 }
