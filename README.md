@@ -74,5 +74,13 @@ For this deliverable I implemented by JavaScript so that the application works f
 - **WebSocket** - I used the setInterval function to periodically notify about a random friend's achievement. This will be replaced with WebSocket messages later.
 - **Application logic** - Each option pressed will replace the html from the page with new html.
 
+## Service Deliverable
+For this deliverable I added backend endpoints that receives votes and returns the voting totals.
+- **Node.js/Express HTTP service** - Done!
+- **Static middleware for frontend** - Done!
+- **Calls to third party endpoints** - Fetch calls to an API that displays space facts.
+- **Backend service endpoints** - Placeholders for login that stores the current user on the server. Endpoints for achievements.
+- **Frontend calls service endpoints** - I did this using the fetch function.
+
 
 notes.md = https://github.com/ScotlynTurner/startup/blob/main/notes.md
