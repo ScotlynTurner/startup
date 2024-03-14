@@ -10,6 +10,14 @@ header {
   font-weight: 200;
 }
 
+#main-title {
+  color: rgb(164, 107, 197);
+}
+
+button {
+  background-color: rgb(164, 107, 197);
+}
+
 menu {
   flex: 1;
   display: flex;
@@ -70,7 +78,7 @@ a:visited{
 }
 
 b {
-  color: rgb(155, 75, 198);
+  color: rgb(164, 107, 197);;
 }
 
 main {
