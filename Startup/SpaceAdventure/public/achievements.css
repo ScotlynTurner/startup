@@ -58,6 +58,19 @@ tbody, th {
     text-align: left;
     padding: .5em;
 }
+
+td {
+  padding-right: 1em;
+}
+
+tr {
+  padding: 5em;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 2; /* Adjust as needed */
+}
   
 
 .picture-box {
