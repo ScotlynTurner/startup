@@ -1,10 +1,10 @@
 // Load user-specific achievements
 async function loadUserAchievements(username) {
-  let achievements = JSON.parse(localStorage.getItem('achievements')) || [];
+  let achievements = JSON.parse(localStorage.getItem('achievements'));
   try {
     const response = await fetch(`/api/achievements?username=${username}`);
     const newAchievements = await response.json();
-    achievements = newAchievements;
+    achievements.push(newAchievements);
     localStorage.setItem('achievements', JSON.stringify(achievements));
   } catch (error) {
     console.error('Error loading achievements:', error);
@@ -18,6 +18,7 @@ async function loadAllAchievements() {
   try {
     const response = await fetch(`/api/achievements/all`);
     const newAchievements = await response.json();
+    achievements.push(newAchievements);
     localStorage.setItem('achievements', JSON.stringify(achievements));
   } catch (error) {
     console.error('Error fetching achievements:', error);
@@ -64,7 +65,7 @@ async function displayAllAchievements(achievements) {
       const endingTdEl = document.createElement('td');
       const dateTdEl = document.createElement('td');
 
-      nameTdEl.textContent = achievement.name;
+      nameTdEl.textContent = achievement.username;
       endingTdEl.textContent = achievement.achievement;
       dateTdEl.textContent = achievement.date;
 

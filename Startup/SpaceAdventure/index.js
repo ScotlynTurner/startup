@@ -22,7 +22,7 @@ app.use((_req, res) => {
 
 let achievements = [];
 
-// GetAchievements
+// Get achievements by username
 apiRouter.get('/achievements', (req, res) => {
   const { username } = req.query;
   if (!username) {
@@ -33,11 +33,12 @@ apiRouter.get('/achievements', (req, res) => {
   res.send(userAchievements);
 });
 
+// Get all achievements
 apiRouter.get('/achievements/all', (req, res) => {
   res.send(achievements);
 });
 
-// SubmitAchievement
+// Submit Achievement
 apiRouter.post('/achievements', (req, res) => {
   const newAchievement = req.body;
   let achievements = JSON.parse(localStorage.getItem('achievements')) || [];
