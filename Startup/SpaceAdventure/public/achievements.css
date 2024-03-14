@@ -53,10 +53,10 @@ footer {
     flex: 0 30px;
 }
 
-td, th {
+tbody, th {
     color: rgb(255, 255, 255);
     text-align: left;
-    padding: .3em;
+    padding: .5em;
 }
   
 
