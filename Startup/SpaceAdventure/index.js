@@ -1,6 +1,11 @@
+const cookieParser = require('cookie-parser');
 const express = require('express');
 const path = require('path');
+const bcrypt = require('bcrypt');
+const DB = require('./database.js');
 const app = express();
+
+const authCookieName = 'token';
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
@@ -10,6 +15,12 @@ app.use(express.json());
 
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Use the cookie parser middleware for tracking authentication tokens
+app.use(cookieParser());
+
+// Trust headers that are forwarded from the proxy so we can determine IP addresses
+app.set('trust proxy', true);
 
 // Router for service endpoints
 var apiRouter = express.Router();
