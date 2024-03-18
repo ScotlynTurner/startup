@@ -4,9 +4,11 @@
     document.querySelector('#playerName').textContent = username;
     setDisplay('loginControls', 'none');
     setDisplay('playControls', 'block');
+    setNav('nav-item', 'block');
   } else {
     setDisplay('loginControls', 'block');
     setDisplay('playControls', 'none');
+    setNav('nav-item', 'none');
   }
 })();
 
@@ -69,4 +71,11 @@ function setDisplay(controlId, display) {
   if (playControlEl) {
     playControlEl.style.display = display;
   }
+}
+
+function setNav(controlClass, display) {
+  const navControlEls = document.querySelectorAll(`.${controlClass}`);
+  navControlEls.forEach((navControlEl) => {
+    navControlEl.style.display = display;
+  });
 }
