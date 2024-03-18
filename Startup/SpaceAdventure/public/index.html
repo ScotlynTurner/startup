@@ -37,20 +37,20 @@
           <div id="loginControls" style="display: block">
             <div class="input-group mb-3">
               <span class="input-group-text">🚀</span>
-              <input class="form-control" type="text" id="userName" placeholder="your@email.com" />
+              <input class="form-control" type="text" id="username" placeholder="username" />
             </div>
             <div class="input-group mb-3">
               <span class="input-group-text">🔒</span>
-              <input class="form-control" type="password" id="userPassword" placeholder="password" />
+              <input class="form-control" type="password" id="password" placeholder="password" />
             </div>
-            <button type="button" class="btn btn-primary" onclick="loginUser()">Login</button>
-            <button type="button" class="btn btn-primary" onclick="createUser()">Create</button>
+            <button type="button" class="primary" onclick="loginUser()">Login</button>
+            <button type="button" onclick="createUser()">Create</button>
           </div>
           <!-- Displayed when ready to play -->
           <div id="playControls" style="display: none">
             <div id="playerName"></div>
-            <button type="button" class="btn btn-primary" onclick="play()">Play</button>
-            <button type="button" class="btn btn-secondary" onclick="logout()">Logout</button>
+            <button type="button" class="login" onclick="home()">Play</button>
+            <button type="button" class="primary" onclick="logout()">Logout</button>
           </div>
         </div>
   
@@ -64,13 +64,6 @@
               </div>
             </div>
           </div>
-            <!-- <label for="userName">UserName</label>
-            <input type="text" id="userName" placeholder="Your name here"/>
-            <br/>
-            <label for="password">Password</label>
-            <input type="password" id="password" placeholder="Your password here"/>
-            <br/>
-            <button type="submit" id="loginButton">Login</button> -->
         </form>
     </section>
     <p class="spaceFacts">

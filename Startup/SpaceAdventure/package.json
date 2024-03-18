@@ -15,6 +15,7 @@
     "express": "^4.18.3",
     "express-session": "^1.18.0",
     "mongodb": "^6.5.0",
-    "space-fact": "^1.0.4"
+    "space-fact": "^1.0.4",
+    "uuid": "^9.0.1"
   }
 }

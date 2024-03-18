@@ -1,7 +1,7 @@
 (async () => {
-  const userName = localStorage.getItem('userName');
-  if (userName) {
-    document.querySelector('#playerName').textContent = userName;
+  const username = localStorage.getItem('username');
+  if (username) {
+    document.querySelector('#playerName').textContent = username;
     setDisplay('loginControls', 'none');
     setDisplay('playControls', 'block');
   } else {
@@ -19,11 +19,11 @@ async function createUser() {
 }
 
 async function loginOrCreate(endpoint) {
-  const username = document.querySelector("#userName").value;
+  const username = document.querySelector("#username").value;
   const password = document.querySelector("#password").value;
   const response = await fetch(endpoint, {
     method: 'post',
-    body: JSON.stringify({ email: userName, password: password }),
+    body: JSON.stringify({ username: username, password: password }),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
@@ -31,7 +31,7 @@ async function loginOrCreate(endpoint) {
 
 
   if (response.ok) {
-    localStorage.setItem('userName', userName);
+    localStorage.setItem('username', username);
     window.location.href = 'home.html';
   } else {
     const body = await response.json();
@@ -47,7 +47,7 @@ function home() {
 }
 
 function logout() {
-  localStorage.removeItem('userName');
+  localStorage.removeItem('username');
   fetch(`/api/auth/logout`, {
     method: 'delete',
   }).then(() => (window.location.href = '/'));
