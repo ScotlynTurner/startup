@@ -19,6 +19,14 @@ menu {
     justify-content: center;
 }
 
+.planetEmoji {
+  width: 24px; /* Set the width and height as needed */
+  height: 24px;
+  display: inline-block;
+  background-image: url('planet.png'); /* Use the path to your PNG file */
+  background-size: cover;
+}
+
 a:link {
     font-size: large;
     padding: 1em;

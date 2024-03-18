@@ -95,6 +95,14 @@ body {
   menu .nav-item {
     padding: 0 0.3em;
   }
+
+  .planetEmoji {
+    width: 24px; /* Set the width and height as needed */
+    height: 24px;
+    display: inline-block;
+    background-image: url('planet.png'); /* Use the path to your PNG file */
+    background-size: cover;
+}
   
   footer a {
     float: right;

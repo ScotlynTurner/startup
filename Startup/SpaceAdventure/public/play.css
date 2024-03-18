@@ -18,6 +18,14 @@ button {
   background-color: rgb(164, 107, 197);
 }
 
+.planetEmoji {
+  width: 24px; /* Set the width and height as needed */
+  height: 24px;
+  display: inline-block;
+  background-image: url('planet.png'); /* Use the path to your PNG file */
+  background-size: cover;
+}
+
 menu {
   flex: 1;
   display: flex;
