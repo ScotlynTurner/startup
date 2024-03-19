@@ -1,25 +1,32 @@
 // Load user-specific achievements
 async function loadUserAchievements(username) {
   let achievements = JSON.parse(localStorage.getItem('achievements'));
+  var userAchievements = achievements;
+  console.log(achievements);
   try {
-    const response = await fetch(`/api/achievements?username=${username}`);
+    const response = await fetch(`/api/achievements`);
     const newAchievements = await response.json();
-    achievements.push(newAchievements);
-    localStorage.setItem('achievements', JSON.stringify(achievements));
+    userAchievements = achievements.filter(achievement => achievement.username === username);
+    if (newAchievements.length != 0) {
+      localStorage.setItem('achievements', JSON.stringify(achievements));
+    }
   } catch (error) {
     console.error('Error loading achievements:', error);
   }
-  displayUserAchievements(achievements);
+  displayUserAchievements(userAchievements);
 }
 
 // Load all users' achievements
 async function loadAllAchievements() {
   let achievements = JSON.parse(localStorage.getItem('achievements'))
+  console.log(achievements);
   try {
-    const response = await fetch(`/api/achievements/all`);
+    const response = await fetch(`/api/achievements`);
     const newAchievements = await response.json();
-    achievements.push(newAchievements);
-    localStorage.setItem('achievements', JSON.stringify(achievements));
+    if (newAchievements.length != 0) {
+      achievements.push(newAchievements);
+      localStorage.setItem('achievements', JSON.stringify(achievements));
+    }
   } catch (error) {
     console.error('Error fetching achievements:', error);
     const achievementsText = localStorage.getItem('achievements');
@@ -37,6 +44,7 @@ async function displayUserAchievements(achievements) {
   if (achievements.length) {
     tableBodyEl.innerHTML = ""; // Clear previous content
     for (const achievement of achievements) {
+      if (!achievement) continue;
       const rowEl = document.createElement('tr');
       const endingTdEl = document.createElement('td');
       const dateTdEl = document.createElement('td');
@@ -60,6 +68,7 @@ async function displayAllAchievements(achievements) {
   if (achievements.length) {
     tableBodyEl.innerHTML = ""; // Clear previous content
     for (const achievement of achievements) {
+      if (!achievement) continue;
       const rowEl = document.createElement('tr');
       const nameTdEl = document.createElement('td');
       const endingTdEl = document.createElement('td');

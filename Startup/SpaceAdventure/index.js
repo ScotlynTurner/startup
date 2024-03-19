@@ -107,19 +107,8 @@ app.use((_req, res) => {
 
 let achievements = [];
 
-// Get achievements by username
-apiRouter.get('/achievements', (req, res) => {
-  const { username } = req.query;
-  if (!username) {
-    return res.status(400).send('Username is required');
-  }
-
-  const userAchievements = achievements.filter(achievement => achievement.username === username);
-  res.send(userAchievements);
-});
-
 // Get all achievements
-apiRouter.get('/achievements/all', (req, res) => {
+apiRouter.get('/achievements', (req, res) => {
   res.send(achievements);
 });
 
