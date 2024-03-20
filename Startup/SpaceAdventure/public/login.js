@@ -4,10 +4,14 @@
     document.querySelector('#playerName').textContent = username;
     setDisplay('loginControls', 'none');
     setDisplay('playControls', 'block');
+    setDisplay('welcome', 'none');
+    setDisplay('goodbye', 'block');
     setNav('nav-item', 'block');
   } else {
     setDisplay('loginControls', 'block');
     setDisplay('playControls', 'none');
+    setDisplay('welcome', 'block');
+    setDisplay('goodbye', 'none');
     setNav('nav-item', 'none');
   }
 })();
