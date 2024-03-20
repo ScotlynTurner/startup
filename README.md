@@ -82,5 +82,15 @@ For this deliverable I added backend endpoints that receives votes and returns t
 - **Backend service endpoints** - Placeholders for login that stores the current user on the server. Endpoints for achievements.
 - **Frontend calls service endpoints** - I did this using the fetch function.
 
+## DB/Login deliverable
+For this deliverable I associate the votes with the logged in user. I stored the votes in the database.
+- **MongoDB Atlas database created** - Done!
+- **Stores data in MongoDB** - Done!
+- **User registration** - Creates a new account in the database.
+- **Existing user** - Stores the achievements under the same user if the user already exists.
+- **Use MongoDB to store credentials** - Stores both user and their achievements.
+- **Restricts functionality** - You cannot play or see achievements until you have logged in.
+
+
 
 notes.md = https://github.com/ScotlynTurner/startup/blob/main/notes.md
