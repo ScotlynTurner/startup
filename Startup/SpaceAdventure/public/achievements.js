@@ -1,40 +1,22 @@
 // Load user-specific achievements
 async function loadUserAchievements(username) {
-  let achievements = JSON.parse(localStorage.getItem('achievements'));
-  var userAchievements = achievements;
-  console.log(achievements);
   try {
-    const response = await fetch(`/api/achievements`);
-    const newAchievements = await response.json();
-    userAchievements = achievements.filter(achievement => achievement.username === username);
-    if (newAchievements.length != 0) {
-      localStorage.setItem('achievements', JSON.stringify(achievements));
-    }
+    const response = await fetch(`/api/achievements/user/${username}`);
+    const achievements = await response.json();
+    displayUserAchievements(achievements);
   } catch (error) {
-    console.error('Error loading achievements:', error);
+    console.error('Error loading user achievements:', error);
   }
-  displayUserAchievements(userAchievements);
 }
 
-// Load all users' achievements
 async function loadAllAchievements() {
-  let achievements = JSON.parse(localStorage.getItem('achievements'))
-  console.log(achievements);
   try {
     const response = await fetch(`/api/achievements`);
-    const newAchievements = await response.json();
-    if (newAchievements.length != 0) {
-      achievements.push(newAchievements);
-      localStorage.setItem('achievements', JSON.stringify(achievements));
-    }
+    const achievements = await response.json();
+    displayAllAchievements(achievements);
   } catch (error) {
-    console.error('Error fetching achievements:', error);
-    const achievementsText = localStorage.getItem('achievements');
-    if (achievementsText) {
-      achievements = JSON.parse(achievementsText);
-    }
+    console.error('Error loading all achievements:', error);
   }
-  displayAllAchievements(achievements);
 }
 
 // Display user-specific achievements on the achievements page
@@ -90,7 +72,7 @@ async function displayAllAchievements(achievements) {
 
 // Call these functions based on the current page
 if (window.location.pathname === "/achievements.html") {
-  const username = localStorage.getItem('username');
+   username = localStorage.getItem('username');
   if (username) {
     loadUserAchievements(username);
   } else {

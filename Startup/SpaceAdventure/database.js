@@ -39,14 +39,26 @@ async function createUser(username, password) {
 
   return user;
 }
+async function addAchievement(achievement) {
+  await achievementCollection.insertOne(achievement);
+  return achievement;
+}
 
-function addAchievement(achievement) {
-  achievementCollection.insertOne(achievement);
+async function getAllAchievements() {
+  const cursor = achievementCollection.find();
+  return cursor.toArray();
+}
+
+async function getUserAchievements(username) {
+  const cursor = achievementCollection.find({ username: username });
+  return cursor.toArray();
 }
 
 module.exports = {
   getUser,
   getUserByToken,
   createUser,
-  addAchievement
+  addAchievement,
+  getAllAchievements,
+  getUserAchievements
 };

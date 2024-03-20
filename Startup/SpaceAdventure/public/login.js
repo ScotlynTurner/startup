@@ -27,6 +27,7 @@ async function createUser() {
 async function loginOrCreate(endpoint) {
   const username = document.querySelector("#username").value;
   const password = document.querySelector("#password").value;
+  localStorage.setItem('username', username);
   const response = await fetch(endpoint, {
     method: 'post',
     body: JSON.stringify({ username: username, password: password }),

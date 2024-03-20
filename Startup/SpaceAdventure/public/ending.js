@@ -101,7 +101,7 @@ function unlockAchievement(username, achievement) {
     const newAchievement = { username, achievement, date };
 
     // Save the achievement to the server
-    fetch('/api/achievements/all', {
+    fetch('/api/achievements', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

@@ -105,20 +105,25 @@ app.use((_req, res) => {
   res.sendFile('index.html', { root: path.join(__dirname, 'public') });
 });
 
-let achievements = [];
+apiRouter.get('/achievements/user/:username', async (req, res) => {
+  const { username } = req.params;
+  const userAchievements = await DB.getUserAchievements(username);
+  res.send(userAchievements);
+});
 
 // Get all achievements
-apiRouter.get('/achievements', (req, res) => {
-  res.send(achievements);
+apiRouter.get('/achievements', async (req, res) => {
+  const allAchievements = await DB.getAllAchievements();
+  res.send(allAchievements);
 });
 
 // Submit Achievement
-apiRouter.post('/achievements', (req, res) => {
+apiRouter.post('/achievements', async (req, res) => {
   const newAchievement = req.body;
-  let achievements = JSON.parse(localStorage.getItem('achievements')) || [];
-  achievements.push(newAchievement);
-  localStorage.setItem('achievements', JSON.stringify(achievements));
-  res.send(achievements);
+  if (newAchievement) {
+    await DB.addAchievement(newAchievement);
+    return;
+  }
 });
 
 app.listen(port, () => {
