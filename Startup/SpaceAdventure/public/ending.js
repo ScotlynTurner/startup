@@ -1,3 +1,5 @@
+var socket;
+
 function updateEnding(outcome) {
     var messageDiv = document.getElementById('message');
     var spaceImageDiv = document.getElementById('spaceImage');

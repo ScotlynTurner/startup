@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const DB = require('./database.js');
+const { peerProxy } = require('./peerProxy.js');
 const app = express();
 
 const authCookieName = 'token';
@@ -129,3 +130,5 @@ apiRouter.post('/achievements', async (req, res) => {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+peerProxy(httpService);
