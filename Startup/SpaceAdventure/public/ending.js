@@ -1,6 +1,7 @@
 var socket;
 
 function updateEnding(outcome) {
+    configureWebSocket();
     var messageDiv = document.getElementById('message');
     var spaceImageDiv = document.getElementById('spaceImage');
     var achievement;
@@ -127,9 +128,9 @@ function unlockAchievement(username, achievement) {
     localStorage.setItem('achievements', JSON.stringify(achievements));
 
     // Let other players know the achievement has been unlocked
-    this.socket.onopen = function(event) {
+    socket.onopen = function(event) {
         console.log('WebSocket connection opened.');
-        this.broadcastEvent(newAchievement.username, newAchievement.achievement);
+        broadcastEvent(newAchievement.username, newAchievement.achievement);
     };
 }
 
@@ -161,23 +162,35 @@ function broadcastEvent(from, value) {
       value: value
     };
     // Check if the WebSocket connection is open
-if (this.socket.readyState === WebSocket.OPEN) {
-    this.socket.send(JSON.stringify(event));
-} else {
-    console.error('WebSocket connection is not open.');
-}
+    if (socket.readyState === WebSocket.OPEN) {
+        socket.send(JSON.stringify(event));
+    } else {
+        console.error('WebSocket connection is not open.');
+    }
 }
 
 // Functionality for peer communication using WebSocket
-
 function configureWebSocket() {
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-    this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    socket.onerror = function(event) {
+        console.error('WebSocket error:', event);
+    };
 
-    this.socket.onmessage = async (event) => {
-        const msg = JSON.parse(await event.data.text());
-        alert("Player " + msg.from + " made the achievement " + msg.value);
+    this.socket.onopen = (event) => {
+        console.log("Socket is open");
+    };
+
+    socket.onclose = function(event) {
+        console.log('WebSocket closed:', event);
+    };
+
+    socket.onmessage = (event) => {
+        const msg = JSON.parse(event.data);
+        displayMsg(msg);
     };
 }
 
-configureWebSocket();
+function displayMsg(msg) {
+    alert("Player " + msg.from + " made the achievement " + msg.value);
+}
