@@ -43,7 +43,6 @@
     <script src="ending.js"></script>
     <script>
         // Function to get URL parameter
-        const myEnding = new EndGame();
         function getUrlParameter(name) {
             name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
             var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
@@ -55,7 +54,7 @@
         var outcome = getUrlParameter('outcome');
         console.log('Outcome:', outcome);
         // Call the updateEnding function with the outcome parameter
-        myEnding.updateEnding(outcome);
+        updateEnding(outcome);
     </script>
         <h1>GAME OVER</h1>
         <button onclick="window.location.href = 'home.html';">Play Again</button><br>
