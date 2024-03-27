@@ -21,6 +21,9 @@ function peerProxy(httpServer) {
 
     // Forward messages to everyone except the sender
     ws.on('message', function message(data) {
+      const messageObject = JSON.parse(data);
+      console.log('Received message from client:', messageObject);
+
       connections.forEach((c) => {
         if (c.id !== connection.id) {
           c.ws.send(data);

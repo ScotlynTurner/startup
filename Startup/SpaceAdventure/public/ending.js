@@ -177,16 +177,17 @@ function configureWebSocket() {
         console.error('WebSocket error:', event);
     };
 
-    this.socket.onopen = (event) => {
+    socket.onopen = (event) => {
         console.log("Socket is open");
     };
 
-    socket.onclose = function(event) {
+    socket.onclose = (event) => {
         console.log('WebSocket closed:', event);
     };
 
     socket.onmessage = (event) => {
         const msg = JSON.parse(event.data);
+        console.log(event.data);
         displayMsg(msg);
     };
 }
