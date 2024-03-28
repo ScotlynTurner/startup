@@ -81,3 +81,22 @@ if (window.location.pathname === "/achievements.html") {
 } else if (window.location.pathname === "/friends.html") {
   loadAllAchievements();
 }
+
+let socket;
+function configureWebSocket() {
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+
+    socket.onmessage = async (event) => {
+        console.log('Received onmessage: ', event.data);
+        const json = await event.data.text();
+        const message = JSON.parse(json);
+        displayMsg(message);
+    };
+}
+
+function displayMsg(msg) {
+  alert("Player " + msg.from + " made the achievement \"" + msg.value + "\"");
+}
+
+configureWebSocket();

@@ -189,36 +189,15 @@ function configureWebSocket() {
     };
 
     socket.onmessage = async (event) => {
-        console.log('Received message:', event.data);
-        displayMsg(JSON.parse(event.data));
+        console.log('Received onmessage: ', event.data);
+        const json = await event.data.text();
+        const message = JSON.parse(json);
+        displayMsg(message);
     };
 }
 
 function displayMsg(msg) {
-    alert("Player " + msg.from + " made the achievement " + msg.value);
-    const tableBodyEl = document.querySelector("#achievements");
-  
-    if (achievements.length) {
-      tableBodyEl.innerHTML = ""; // Clear previous content
-      for (const achievement of achievements) {
-        if (!achievement) continue;
-        const rowEl = document.createElement('tr');
-        const nameTdEl = document.createElement('td');
-        const endingTdEl = document.createElement('td');
-        const dateTdEl = document.createElement('td');
-  
-        nameTdEl.textContent = achievement.username;
-        endingTdEl.textContent = achievement.achievement;
-        dateTdEl.textContent = achievement.date;
-  
-        rowEl.appendChild(nameTdEl);
-        rowEl.appendChild(endingTdEl);
-        rowEl.appendChild(dateTdEl);
-        tableBodyEl.appendChild(rowEl);
-      }
-    } else {
-      tableBodyEl.innerHTML = '<tr><td colspan="3">No achievements yet</td></tr>';
-    }
+    alert("Player " + msg.from + " made the achievement \"" + msg.value + "\"");
 }
 
 configureWebSocket();

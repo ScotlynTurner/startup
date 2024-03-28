@@ -84,3 +84,22 @@ function setNav(controlClass, display) {
     navControlEl.style.display = display;
   });
 }
+
+let socket;
+function configureWebSocket() {
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+
+    socket.onmessage = async (event) => {
+      console.log('Received onmessage: ', event.data);
+      const json = await event.data.text();
+      const message = JSON.parse(json);
+      displayMsg(message);
+    };
+}
+
+function displayMsg(msg) {
+  alert("Player " + msg.from + " made the achievement \"" + msg.value + "\"");
+}
+
+configureWebSocket();
