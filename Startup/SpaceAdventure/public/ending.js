@@ -1,7 +1,7 @@
-var socket;
+let socket;
+let messageQueue = [];
 
 function updateEnding(outcome) {
-    configureWebSocket();
     var messageDiv = document.getElementById('message');
     var spaceImageDiv = document.getElementById('spaceImage');
     var achievement;
@@ -96,6 +96,9 @@ function updateEnding(outcome) {
     }
     var name = localStorage.getItem("username");
     this.unlockAchievement(name, achievement);
+    // Let other players know the achievement has been unlocked
+    broadcastEvent(name, achievement);
+
     alert("Achievement Unlocked! " + achievement);
 }
 
@@ -126,12 +129,6 @@ function unlockAchievement(username, achievement) {
     let achievements = JSON.parse(localStorage.getItem('achievements')) || [];
     achievements.push(newAchievement);
     localStorage.setItem('achievements', JSON.stringify(achievements));
-
-    // Let other players know the achievement has been unlocked
-    socket.onopen = function(event) {
-        console.log('WebSocket connection opened.');
-        broadcastEvent(newAchievement.username, newAchievement.achievement);
-    };
 }
 
 async function isAchievementInList(achievementName) {
@@ -161,11 +158,14 @@ function broadcastEvent(from, value) {
       from: from,
       value: value
     };
+    const msg = JSON.stringify(event);
     // Check if the WebSocket connection is open
     if (socket.readyState === WebSocket.OPEN) {
-        socket.send(JSON.stringify(event));
+        socket.send(msg);
     } else {
-        console.error('WebSocket connection is not open.');
+        // Socket not open, queue the message
+        messageQueue.push(msg);
+        console.log(msg);
     }
 }
 
@@ -179,19 +179,46 @@ function configureWebSocket() {
 
     socket.onopen = (event) => {
         console.log("Socket is open");
+        while (messageQueue.length > 0) {
+            socket.send(messageQueue.shift());
+        }
     };
 
     socket.onclose = (event) => {
         console.log('WebSocket closed:', event);
     };
 
-    socket.onmessage = (event) => {
-        const msg = JSON.parse(event.data);
-        console.log(event.data);
-        displayMsg(msg);
+    socket.onmessage = async (event) => {
+        console.log('Received message:', event.data);
+        displayMsg(JSON.parse(event.data));
     };
 }
 
 function displayMsg(msg) {
     alert("Player " + msg.from + " made the achievement " + msg.value);
+    const tableBodyEl = document.querySelector("#achievements");
+  
+    if (achievements.length) {
+      tableBodyEl.innerHTML = ""; // Clear previous content
+      for (const achievement of achievements) {
+        if (!achievement) continue;
+        const rowEl = document.createElement('tr');
+        const nameTdEl = document.createElement('td');
+        const endingTdEl = document.createElement('td');
+        const dateTdEl = document.createElement('td');
+  
+        nameTdEl.textContent = achievement.username;
+        endingTdEl.textContent = achievement.achievement;
+        dateTdEl.textContent = achievement.date;
+  
+        rowEl.appendChild(nameTdEl);
+        rowEl.appendChild(endingTdEl);
+        rowEl.appendChild(dateTdEl);
+        tableBodyEl.appendChild(rowEl);
+      }
+    } else {
+      tableBodyEl.innerHTML = '<tr><td colspan="3">No achievements yet</td></tr>';
+    }
 }
+
+configureWebSocket();
