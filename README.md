@@ -82,7 +82,7 @@ For this deliverable I added backend endpoints that receives votes and returns t
 - **Backend service endpoints** - Placeholders for login that stores the current user on the server. Endpoints for achievements.
 - **Frontend calls service endpoints** - I did this using the fetch function.
 
-## DB/Login deliverable
+## DB/Login Deliverable
 For this deliverable I associate the votes with the logged in user. I stored the votes in the database.
 - **MongoDB Atlas database created** - Done!
 - **Stores data in MongoDB** - Done!
@@ -91,6 +91,12 @@ For this deliverable I associate the votes with the logged in user. I stored the
 - **Use MongoDB to store credentials** - Stores both user and their achievements.
 - **Restricts functionality** - You cannot play or see achievements until you have logged in.
 
+## WebSocket Deliverable
+For this deliverable I used webSocket to update the votes on the frontend in realtime.
+- **Backend listens for WebSocket connection** - Done!
+- **Frontend makes WebSocket connection** - Done!
+- **Data sent over WebSocket connection** - Done!
+- **WebSocket data displayed** - Achievement notifications display in realtime.
 
 
 notes.md = https://github.com/ScotlynTurner/startup/blob/main/notes.md
