@@ -96,7 +96,7 @@ For this deliverable I used webSocket to update the votes on the frontend in rea
 - **Backend listens for WebSocket connection** - Done!
 - **Frontend makes WebSocket connection** - Done!
 - **Data sent over WebSocket connection** - Done!
-- **WebSocket data displayed** - Achievement notifications display in realtime.
+- **WebSocket data displayed** - Achievement notifications display in realtime through alerts.
 
 
 notes.md = https://github.com/ScotlynTurner/startup/blob/main/notes.md
