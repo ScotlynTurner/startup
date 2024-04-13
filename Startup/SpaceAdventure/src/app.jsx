@@ -17,7 +17,7 @@ export default function App() {
       <hr/>
     </header>
     
-    <main className="container-fluid bg-black text-center"></main>
+    <main>App components go here</main>
 
     <footer className="bg-dark text-white-50">
       <div className="container-fluid">
