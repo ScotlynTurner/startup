@@ -83,3 +83,33 @@ map	Run a function to map an array to a new array	a.map(i => i+i)
 filter	Run a function to remove items	a.filter(i => i%2)
 every	Run a function to test if all items match	a.every(i => i < 3)
 some	Run a function to test if any items match	a.some(i => 1 < 1)
+
+--------------------------------------------------
+Port 80 is reserved for : http
+
+Status Codes:
+- 200 -> success
+- 300 -> Content redirects or caching
+- 400 -> Client errors
+- 500 -> Server errors
+
+Standard HTTP headers:
+- Content-Type
+- host
+- cookie
+
+Cookies allow: A server to store data on the client
+
+Websocket - It is peer to peer instead of client to server
+
+"npm install ws":
+O Locks the version of the websocket package for your application
+O Adds the websocket source code to the node_modules directory
+X Adds template code for websockets to your JavaScript
+O Adds a dependency to your package.json file
+
+Linux Daemon:
+O Executes independent of a user
+O Starts when the computer is rebooted
+O PM2 is an example of a daemon
+X Cannot fork other processes
